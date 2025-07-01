@@ -1,0 +1,58 @@
+<h2 style="display: flex; justify-content: center">Todo App</h2>
+
+<div class="card">
+  <p-button
+    pRipple
+    severity="success"
+    label="Add Todo"
+    icon="pi pi-plus"
+    size="small"
+    [raised]="true"
+    (onClick)="addTodoItem()"
+  />
+  <p-toast />
+
+  <span style="margin-left: 1rem"></span>
+  <p-button
+    variant="outlined"
+    label="Delete All"
+    icon="pi pi-trash"
+    size="small"
+    (onClick)="deleteAllTodos()"
+  />
+  <input
+    pInputText
+    [(ngModel)]="todoItemName"
+    type="text"
+    pSize="large"
+    placeholder="Enter the task"
+    style="margin-left: 1rem"
+  />
+  <br />
+  <br />
+  <p-table
+    [value]="todoList"
+    [(selection)]="selectedTodo"
+    dataKey="id"
+    [tableStyle]="{ 'min-width': '50rem' }"
+  >
+    <ng-template #header>
+      <tr>
+        <th style="width: 4rem"><p-tableHeaderCheckbox /></th>
+        <th>Name</th>
+        <th>Remove todo</th>
+      </tr>
+    </ng-template>
+    <ng-template #body let-todo>
+      <tr>
+        <td>
+          <p-tableCheckbox [value]="todo" />
+        </td>
+        <td>{{ todo.name }}</td>
+        <td (click)="deleteTodoItem(todo.id)">
+          <p-button label="" icon="pi pi-trash" />
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
