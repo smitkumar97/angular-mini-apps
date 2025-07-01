@@ -1,21 +1,21 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 
 @Component({
-  selector: 'app-calculator',
+  selector: "app-calculator",
   imports: [FormsModule],
-  templateUrl: './calculator.component.html',
-  styleUrl: './calculator.component.scss',
+  templateUrl: "./calculator.component.html",
+  styleUrl: "./calculator.component.scss",
 })
 export class CalculatorComponent {
-  display: string = '';
+  display: string = "";
   sum = [];
   append(value: string) {
     this.display += value;
   }
 
   clear() {
-    this.display = '';
+    this.display = "";
   }
 
   deleteLast() {
@@ -24,9 +24,9 @@ export class CalculatorComponent {
 
   calculate() {
     try {
-      // this.display = eval(this.display);
+      this.display = eval(this.display);
     } catch {
-      this.display = 'Error';
+      this.display = "Error";
     }
   }
 }
