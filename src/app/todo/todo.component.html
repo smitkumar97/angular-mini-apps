@@ -1,7 +1,8 @@
-<h2 style="display: flex; justify-content: center">Todo App</h2>
+<h2 class="flex justify-center">Todo App</h2>
 
 <div class="card">
   <p-button
+    class="ml-1"
     pRipple
     severity="success"
     label="Add Todo"
@@ -12,8 +13,9 @@
   />
   <p-toast />
 
-  <span style="margin-left: 1rem"></span>
+  <!-- <span style="margin-left: 1rem"></span> -->
   <p-button
+    class="ml-2"
     variant="outlined"
     label="Delete All"
     icon="pi pi-trash"
@@ -21,20 +23,18 @@
     (onClick)="deleteAllTodos()"
   />
   <input
+    class="ml-3 w-30 h-full"
     pInputText
     [(ngModel)]="todoItemName"
     type="text"
     pSize="large"
     placeholder="Enter the task"
-    style="margin-left: 1rem"
   />
-  <br />
-  <br />
   <p-table
     [value]="todoList"
     [(selection)]="selectedTodo"
     dataKey="id"
-    [tableStyle]="{ 'min-width': '50rem' }"
+    [tableStyle]="{ 'min-width': '50rem', 'margin-top': '2rem' }"
   >
     <ng-template #header>
       <tr>

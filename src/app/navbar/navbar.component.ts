@@ -30,13 +30,13 @@ export class NavbarComponent {
       {
         label: "Home",
         icon: "pi pi-home",
-        route: "/home",
+        route: "/",
       },
-      // {
-      //   label: 'Contact',
-      //   icon: 'pi pi-phone',
-      //   route: '/contact',
-      // },
+      {
+        label: "Login",
+        icon: "pi pi-sign-in",
+        route: "/login",
+      },
       {
         label: "Projects",
         icon: "pi pi-home",
@@ -45,6 +45,10 @@ export class NavbarComponent {
           {
             label: "Todo App",
             url: "/todo",
+          },
+          {
+            label: "Users",
+            url: "/users",
           },
         ],
       },

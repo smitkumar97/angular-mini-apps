@@ -24,9 +24,15 @@ export class CalculatorComponent {
 
   calculate() {
     try {
-      this.display = eval(this.display);
+      // this.display = eval(this.display);
+      this.display = this.safeEval(this.display).toString();
     } catch {
       this.display = "Error";
     }
+  }
+
+  private safeEval(expr: string): number {
+    const cleaned = expr.replace(/[^0-9+\-*/().]/g, "");
+    return Function(`'use strict'; return (${cleaned})`)();
   }
 }
