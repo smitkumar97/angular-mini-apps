@@ -1,0 +1,21 @@
+<div>
+  <div
+    class="mb-4 p-1 flex items-center justify-start"
+    style="border: 1px solid rgb(204, 186, 221)"
+  >
+    <p-card
+      [style]="{ width: '10rem', overflow: 'hidden' }"
+      class="flex justify-start"
+    >
+      <ng-template #header> {{ cardTitle }}</ng-template>
+      <!-- <ng-template #title> Advanced Card </ng-template> -->
+      <ng-template #subtitle> {{ cardId }} </ng-template>
+      <p-chip
+        class="w-full h-8"
+        label="Amy Elsner"
+        image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+        alt="Avatar image"
+      />
+    </p-card>
+  </div>
+</div>

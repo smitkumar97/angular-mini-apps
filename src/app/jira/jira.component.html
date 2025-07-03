@@ -1,0 +1,63 @@
+<div class="flex justify-evenly mt-2 p-2 container" cdkDropListGroup>
+  <p-card [style]="{ width: '15rem', overflow: 'hidden' }">
+    <ng-template #title> Todo </ng-template>
+    <span *ngIf="todoList$.length">
+      <div
+        class="inner-cards"
+        cdkDropList
+        [cdkDropListData]="todoList$"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        @for (item of todoList$; track item) {
+        <app-inner-card
+          cdkDrag
+          class="container"
+          [cardId]="item.id"
+          [cardTitle]="item.todo"
+        ></app-inner-card>
+        }
+      </div>
+    </span>
+  </p-card>
+
+  <p-card [style]="{ width: '15rem', overflow: 'hidden' }">
+    <ng-template #title> Inprogress </ng-template>
+    <div
+      class="inner-cards"
+      cdkDropList
+      [cdkDropListData]="inprogress$"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (item of inprogress$; track item) {
+      <app-inner-card
+        cdkDrag
+        class="container"
+        [cardId]="item.id"
+        [cardTitle]="item.todo"
+      ></app-inner-card>
+      }
+    </div>
+  </p-card>
+
+  <p-card [style]="{ width: '15rem', overflow: 'hidden' }">
+    <ng-template #title> In review </ng-template>
+    <div class="inner-cards" *ngFor="let item of todoList$">
+      <app-inner-card
+        [cardId]="item.id"
+        [cardTitle]="item.todo"
+      ></app-inner-card>
+    </div>
+  </p-card>
+
+  <p-card [style]="{ width: '15rem', overflow: 'hidden' }">
+    <ng-template #title> Done </ng-template>
+    <div class="inner-cards" *ngFor="let item of todoList$">
+      <app-inner-card
+        [cardId]="item.id"
+        [cardTitle]="item.todo"
+      ></app-inner-card>
+    </div>
+  </p-card>
+</div>

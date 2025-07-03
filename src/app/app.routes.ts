@@ -9,12 +9,18 @@ import { EcommerceComponent } from "./ecommerce/ecommerce.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { UserDetailsComponent } from "./shared/user-details/user-details.component";
 import { LoginComponent } from "./login/login.component";
+import { JiraComponent } from "./jira/jira.component";
 
 export const routes: Routes = [
   {
     path: "",
     component: HomeComponent,
     title: "Home Page",
+  },
+  {
+    path: "jira",
+    component: JiraComponent,
+    title: "Jira Page",
   },
   {
     path: "todo",

@@ -50,6 +50,10 @@ export class NavbarComponent {
             label: "Users",
             url: "/users",
           },
+          {
+            label: "Jira",
+            url: "/jira",
+          },
         ],
       },
     ];
