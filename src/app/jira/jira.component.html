@@ -81,9 +81,10 @@
       cdkDropList
       [cdkDropListData]="done"
       class="ticket-list"
+      [ngClass]="done.length <= 0 ? 'flex justify-center items-center' : ''"
       (cdkDropListDropped)="drop($event)"
     >
-      @for (item of done; track item.id) {
+      @if (done.length > 0) { @for (item of done; track item.id) {
       <div class="ticket-card" cdkDrag>
         <div class="ticket-id">{{ item.id }}</div>
         <h3 class="ticket-title">{{ item.title }}</h3>
@@ -94,6 +95,10 @@
             >{{ item.points }} pts</span
           >
         </div>
+      </div>
+      } } @else {
+      <div class="no-records flex justify center text-xl text-red-800">
+        No Tickets Found
       </div>
       }
     </div>
