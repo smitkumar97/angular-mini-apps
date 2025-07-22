@@ -1,63 +1,101 @@
-<div class="flex justify-evenly mt-2 p-2 container" cdkDropListGroup>
-  <p-card [style]="{ width: '15rem', overflow: 'hidden' }">
-    <ng-template #title> Todo </ng-template>
-    <span *ngIf="todoList$.length">
-      <div
-        class="inner-cards"
-        cdkDropList
-        [cdkDropListData]="todoList$"
-        class="example-list"
-        (cdkDropListDropped)="drop($event)"
-      >
-        @for (item of todoList$; track item) {
-        <app-inner-card
-          cdkDrag
-          class="container"
-          [cardId]="item.id"
-          [cardTitle]="item.todo"
-        ></app-inner-card>
-        }
-      </div>
-    </span>
-  </p-card>
-
-  <p-card [style]="{ width: '15rem', overflow: 'hidden' }">
-    <ng-template #title> Inprogress </ng-template>
+<div cdkDropListGroup class="jira-board">
+  <!-- To Do Column -->
+  <div class="board-column">
+    <h2 class="column-header todo-header">To Do</h2>
     <div
-      class="inner-cards"
       cdkDropList
-      [cdkDropListData]="inprogress$"
-      class="example-list"
+      [cdkDropListData]="todo"
+      class="ticket-list"
       (cdkDropListDropped)="drop($event)"
     >
-      @for (item of inprogress$; track item) {
-      <app-inner-card
-        cdkDrag
-        class="container"
-        [cardId]="item.id"
-        [cardTitle]="item.todo"
-      ></app-inner-card>
+      @for (item of todo; track item.id) {
+      <div class="ticket-card" cdkDrag>
+        <div class="ticket-id">{{ item.id }}</div>
+        <h3 class="ticket-title">{{ item.title }}</h3>
+        <p class="ticket-desc">{{ item.description }}</p>
+        <div class="ticket-footer">
+          <span class="ticket-type">{{ item.type || "Task" }}</span>
+          <span class="ticket-points" *ngIf="item.points"
+            >{{ item.points }} pts</span
+          >
+        </div>
+      </div>
       }
     </div>
-  </p-card>
+  </div>
 
-  <p-card [style]="{ width: '15rem', overflow: 'hidden' }">
-    <ng-template #title> In review </ng-template>
-    <div class="inner-cards" *ngFor="let item of todoList$">
-      <app-inner-card
-        [cardId]="item.id"
-        [cardTitle]="item.todo"
-      ></app-inner-card>
+  <!-- In Progress Column -->
+  <div class="board-column">
+    <h2 class="column-header in-progress-header">In Progress</h2>
+    <div
+      cdkDropList
+      [cdkDropListData]="inProgress"
+      class="ticket-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (item of inProgress; track item.id) {
+      <div class="ticket-card" cdkDrag>
+        <div class="ticket-id">{{ item.id }}</div>
+        <h3 class="ticket-title">{{ item.title }}</h3>
+        <p class="ticket-desc">{{ item.description }}</p>
+        <div class="ticket-footer">
+          <span class="ticket-type">{{ item.type || "Task" }}</span>
+          <span class="ticket-points" *ngIf="item.points"
+            >{{ item.points }} pts</span
+          >
+        </div>
+      </div>
+      }
     </div>
-  </p-card>
+  </div>
 
-  <p-card [style]="{ width: '15rem', overflow: 'hidden' }">
-    <ng-template #title> Done </ng-template>
-    <div class="inner-cards" *ngFor="let item of todoList$">
-      <app-inner-card
-        [cardId]="item.id"
-        [cardTitle]="item.todo"
-      ></app-inner-card>
+  <!-- In QA Column -->
+  <div class="board-column">
+    <h2 class="column-header qa-header">In QA</h2>
+    <div
+      cdkDropList
+      [cdkDropListData]="inQA"
+      class="ticket-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (item of inQA; track item.id) {
+      <div class="ticket-card" cdkDrag>
+        <div class="ticket-id">{{ item.id }}</div>
+        <h3 class="ticket-title">{{ item.title }}</h3>
+        <p class="ticket-desc">{{ item.description }}</p>
+        <div class="ticket-footer">
+          <span class="ticket-type">{{ item.type || "Task" }}</span>
+          <span class="ticket-points" *ngIf="item.points"
+            >{{ item.points }} pts</span
+          >
+        </div>
+      </div>
+      }
     </div>
-  </p-card>
+  </div>
+
+  <!-- Done Column -->
+  <div class="board-column">
+    <h2 class="column-header done-header">Done</h2>
+    <div
+      cdkDropList
+      [cdkDropListData]="done"
+      class="ticket-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (item of done; track item.id) {
+      <div class="ticket-card" cdkDrag>
+        <div class="ticket-id">{{ item.id }}</div>
+        <h3 class="ticket-title">{{ item.title }}</h3>
+        <p class="ticket-desc">{{ item.description }}</p>
+        <div class="ticket-footer">
+          <span class="ticket-type">{{ item.type || "Task" }}</span>
+          <span class="ticket-points" *ngIf="item.points"
+            >{{ item.points }} pts</span
+          >
+        </div>
+      </div>
+      }
+    </div>
+  </div>
 </div>
