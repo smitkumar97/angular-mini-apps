@@ -39,7 +39,9 @@ export const routes: Routes = [
   },
   {
     path: "users",
-    component: UserProfileComponent,
+    loadChildren: () =>
+      import("./shared/user.module").then((m) => m.UserModule),
+    // component: UserProfileComponent,
   },
   {
     path: "user/:id",

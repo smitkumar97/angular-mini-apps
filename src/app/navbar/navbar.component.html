@@ -20,7 +20,9 @@
       <div class="p-menubar-item-link">
         <span [class]="item.icon"></span>
         <span class="ml-2">{{ item.label }}</span>
-        <span *ngIf="item.items" class="pi pi-fw pi-angle-down ml-2"></span>
+        @if (item.items) {
+        <span class="pi pi-fw pi-angle-down ml-2"></span>
+        }
         <!-- <p-badge *ngIf="item.badge" class="ml-2" [value]="item.badge" /> -->
       </div>
     </ng-template>
