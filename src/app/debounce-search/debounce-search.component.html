@@ -1,0 +1,10 @@
+<div [formGroup]="searchForm" class="m-2">
+  <input formControlName="firstName" />
+</div>
+@if (searchResults?.length) {
+<ul>
+  @for (result of searchResults; track result?.id) {
+  <li>{{ result.firstName }}</li>
+  }
+</ul>
+}

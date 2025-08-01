@@ -70,12 +70,10 @@ export class UserProfileComponent {
 
     const result = [...this.userList$];
     if (selectedOp === "title") {
-      // Sort by title (A-Z) using comparison operators
       this.userList$ = result.sort((a, b) =>
         a.firstName.localeCompare(b.firstName)
       );
     } else if (selectedOp === "id") {
-      // Sort by id ascending
       this.userList$ = result.sort((a, b) => a.id - b.id);
     }
   }

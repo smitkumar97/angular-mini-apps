@@ -54,6 +54,10 @@ export class NavbarComponent {
             label: "Jira",
             url: "/jira",
           },
+          {
+            label: "Debounce Search",
+            url: "/debounce",
+          },
         ],
       },
     ];

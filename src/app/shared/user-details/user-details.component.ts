@@ -3,10 +3,11 @@ import { CardModule } from "primeng/card";
 import { ButtonModule } from "primeng/button";
 import { Router } from "@angular/router";
 import { Chip } from "primeng/chip";
+import { CommonModule } from "@angular/common";
 
 @Component({
   selector: "app-user-details",
-  imports: [CardModule, ButtonModule, Chip],
+  imports: [CardModule, ButtonModule, Chip, CommonModule],
   templateUrl: "./user-details.component.html",
   styleUrl: "./user-details.component.scss",
 })

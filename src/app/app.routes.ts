@@ -10,6 +10,7 @@ import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { UserDetailsComponent } from "./shared/user-details/user-details.component";
 import { LoginComponent } from "./login/login.component";
 import { JiraComponent } from "./jira/jira.component";
+import { DebounceSearchComponent } from "./debounce-search/debounce-search.component";
 
 export const routes: Routes = [
   {
@@ -50,6 +51,10 @@ export const routes: Routes = [
   {
     path: "user/:id/post",
     component: FormDemoComponent,
+  },
+  {
+    path: "debounce",
+    component: DebounceSearchComponent,
   },
   {
     path: "login",
