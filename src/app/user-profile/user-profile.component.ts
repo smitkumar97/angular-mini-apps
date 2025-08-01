@@ -1,18 +1,27 @@
 import { Component } from "@angular/core";
 import { UserService } from "../services/user.service";
-import { Subject, Subscription, takeUntil } from "rxjs";
+import { Subject } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { TableModule } from "primeng/table";
 import { Button } from "primeng/button";
-import { Dialog } from "primeng/dialog";
 import { ButtonModule } from "primeng/button";
 import { DialogComponent } from "../shared/dialog/dialog.component";
 import { Router } from "@angular/router";
-import { CommonModule } from "@angular/common";
+import { DatePipe, TitleCasePipe, UpperCasePipe } from "@angular/common";
+import { CustomPipePipe } from "../shared//pipes/custom-pipe.pipe";
 
 @Component({
   selector: "app-user-profile",
-  imports: [TableModule, Button, ButtonModule, DialogComponent, CommonModule],
+  imports: [
+    TableModule,
+    Button,
+    ButtonModule,
+    DialogComponent,
+    TitleCasePipe,
+    UpperCasePipe,
+    DatePipe,
+    CustomPipePipe,
+  ],
   templateUrl: "./user-profile.component.html",
   styleUrl: "./user-profile.component.scss",
   providers: [HttpClient],

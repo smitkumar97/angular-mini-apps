@@ -8,6 +8,7 @@
   <ng-template #header>
     <tr>
       <th pSortableColumn="name">Name <p-sortIcon field="name" /></th>
+      <th pSortableColumn="dob">DOB <p-sortIcon field="dob" /></th>
       <th pSortableColumn="email">Email <p-sortIcon field="email" /></th>
       <th pSortableColumn="company.name">
         Company <p-sortIcon field="company" />
@@ -18,9 +19,13 @@
   </ng-template>
   <ng-template #body let-user>
     <tr>
-      <td>{{ user.firstName }} {{ user.lastName }}</td>
+      <td>
+        {{ user.firstName | customPipe : "null" }}
+        {{ user.lastName }}
+      </td>
+      <td>{{ user.birthDate | date }}</td>
       <td>{{ user.email }}</td>
-      <td>{{ user.company.name }}</td>
+      <td>{{ user.company.name | titlecase }}</td>
       <td>{{ user.phone }}</td>
       <td>
         <p-button
@@ -34,7 +39,7 @@
 </p-table>
 
 <app-dialog [openDialog]="visible" (dialogState)="closeDialog()"></app-dialog>
-} @if(showList) {
+} @else if(showList) {
 <div class="container">
   <select name="" id="dropdown" (change)="dropDownChange($event)">
     <option value="title">A-Z title</option>
@@ -43,7 +48,7 @@
 
   <ol>
     @for (item of this.userList$; track item.id) {
-    <li>{{ item.firstName }}</li>
+    <li>{{ item.firstName | uppercase }}</li>
     }
   </ol>
 </div>
