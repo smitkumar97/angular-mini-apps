@@ -1,0 +1,7 @@
+<ul>
+  @for (item of data; track item.id) {
+  <li>{{ item.title }} &nbsp; {{ item.price }}</li>
+  }@empty {
+  <li>No items to display.</li>
+  }
+</ul>

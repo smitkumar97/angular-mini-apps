@@ -52,11 +52,31 @@ export class NavbarComponent {
           },
           {
             label: "Jira",
-            url: "/jira",
+            url: "/interview",
           },
           {
             label: "Debounce Search",
             url: "/debounce",
+          },
+          {
+            label: "Interview",
+            url: "/interview",
+          },
+          {
+            label: "Component D",
+            url: "/compd",
+          },
+          {
+            label: "Component A",
+            url: "/compa",
+          },
+          {
+            label: "Component X",
+            url: "/compx",
+          },
+          {
+            label: "Component Y",
+            url: "/compy",
           },
         ],
       },

@@ -11,6 +11,11 @@ import { UserDetailsComponent } from "./shared/user-details/user-details.compone
 import { LoginComponent } from "./login/login.component";
 import { JiraComponent } from "./jira/jira.component";
 import { DebounceSearchComponent } from "./debounce-search/debounce-search.component";
+import { InterviewComponent } from "./interview/interview.component";
+import { DComponent } from "./interview/a/b/c/d/d.component";
+import { AComponent } from "./interview/a/a.component";
+import { XComponent } from "./interview/x/x.component";
+import { YComponent } from "./interview/y/y.component";
 
 export const routes: Routes = [
   {
@@ -61,8 +66,32 @@ export const routes: Routes = [
     component: LoginComponent,
   },
   {
+    path: "interview",
+    component: InterviewComponent,
+  },
+  {
     path: "test",
     component: TestComponent,
+    title: "Test App",
+  },
+  {
+    path: "compd",
+    component: DComponent,
+    title: "Test App",
+  },
+  {
+    path: "compa",
+    component: AComponent,
+    title: "Test App",
+  },
+  {
+    path: "compx",
+    component: XComponent,
+    title: "Test App",
+  },
+  {
+    path: "compy",
+    component: YComponent,
     title: "Test App",
   },
   {
