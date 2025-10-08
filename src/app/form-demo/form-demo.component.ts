@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from "@angular/core";
+import { CommonModule } from "@angular/common";
 import {
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
   Validators,
-} from '@angular/forms';
-import { DatePipe } from '@angular/common';
-import { RouterLink } from '@angular/router';
+} from "@angular/forms";
+import { RouterLink } from "@angular/router";
 
 @Component({
-  selector: 'app-form-demo',
+  selector: "app-form-demo",
   imports: [CommonModule, ReactiveFormsModule, RouterLink],
-  templateUrl: './form-demo.component.html',
-  styleUrl: './form-demo.component.scss',
+  templateUrl: "./form-demo.component.html",
+  styleUrl: "./form-demo.component.scss",
 })
 export class FormDemoComponent implements OnInit {
   form!: FormGroup;
@@ -28,8 +27,8 @@ export class FormDemoComponent implements OnInit {
 
   initializeForm(): void {
     this.form = this.fb.group({
-      username: ['', [Validators.required, Validators.minLength(3)]],
-      email: ['', [Validators.required, Validators.email]],
+      username: ["", [Validators.required, Validators.minLength(3)]],
+      email: ["", [Validators.required, Validators.email]],
     });
   }
 
@@ -45,7 +44,7 @@ export class FormDemoComponent implements OnInit {
         timestamp: new Date(),
       };
       component.submissions.unshift(submission);
-      console.log('New submission:', submission);
+      console.log("New submission:", submission);
     };
   }
 

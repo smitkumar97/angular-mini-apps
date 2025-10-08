@@ -6,7 +6,6 @@ import { CalculatorComponent } from "./calculator/calculator.component";
 import { TestComponent } from "./test/test.component";
 import { TodoComponent } from "./todo/todo.component";
 import { EcommerceComponent } from "./ecommerce/ecommerce.component";
-import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { UserDetailsComponent } from "./shared/user-details/user-details.component";
 import { LoginComponent } from "./login/login.component";
 import { JiraComponent } from "./jira/jira.component";
@@ -77,22 +76,22 @@ export const routes: Routes = [
   {
     path: "compd",
     component: DComponent,
-    title: "Test App",
+    title: "D Component",
   },
   {
     path: "compa",
     component: AComponent,
-    title: "Test App",
+    title: "A Component",
   },
   {
     path: "compx",
     component: XComponent,
-    title: "Test App",
+    title: "X Component",
   },
   {
     path: "compy",
     component: YComponent,
-    title: "Test App",
+    title: "Y Component",
   },
   {
     path: "**",

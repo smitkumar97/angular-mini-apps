@@ -1,10 +1,9 @@
 import { Component } from "@angular/core";
 import { UserService } from "../../services/user.service";
-import { JsonPipe } from "@angular/common";
 
 @Component({
   selector: "app-a",
-  imports: [JsonPipe],
+  imports: [],
   templateUrl: "./a.component.html",
   styleUrl: "./a.component.scss",
 })
@@ -16,8 +15,6 @@ export class AComponent {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     console.log("A");
-    this.api.getData().subscribe((res) => {
-      this.data = res.products;
-    });
+    this.data = this.api.getData();
   }
 }

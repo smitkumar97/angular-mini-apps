@@ -1,10 +1,9 @@
 import { Component } from "@angular/core";
 import { UserService } from "../../services/user.service";
-import { JsonPipe } from "@angular/common";
 
 @Component({
   selector: "app-x",
-  imports: [JsonPipe],
+  imports: [],
   templateUrl: "./x.component.html",
   styleUrl: "./x.component.scss",
 })

@@ -21,7 +21,7 @@
     <tr>
       <td>
         {{ user.firstName | customPipe : "null" }}
-        {{ user.lastName }}
+        {{ user.lastName | uppercase }}
       </td>
       <td>{{ user.birthDate | date }}</td>
       <td>{{ user.email }}</td>

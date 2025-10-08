@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from "@angular/core";
 
 @Component({
-  selector: 'app-ecommerce',
+  selector: "app-ecommerce",
   imports: [],
-  templateUrl: './ecommerce.component.html',
-  styleUrl: './ecommerce.component.scss'
+  templateUrl: "./ecommerce.component.html",
+  styleUrl: "./ecommerce.component.scss",
+  encapsulation: ViewEncapsulation.ShadowDom,
 })
-export class EcommerceComponent {
-
-}
+export class EcommerceComponent {}

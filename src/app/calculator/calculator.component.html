@@ -1,3 +1,12 @@
+<ng-content></ng-content>
+<div *ngIf="true; else loginTemplate">Welcome, User!</div>
+<ng-template #loginTemplate> Please log in. </ng-template>
+
+<ng-container>
+  <p>This is a container fragment</p>
+</ng-container>
+
+<ng-template #showNgTemplateContent> Should be displayed </ng-template>
 <div class="calculator">
   <div class="display">{{ display || "0" }}</div>
   <div class="buttons">

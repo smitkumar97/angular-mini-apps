@@ -23,7 +23,7 @@ export class DebounceSearchComponent {
     // this.inItSearch();
     this.searchForm.controls.firstName.valueChanges
       .pipe(
-        debounceTime(1000),
+        debounceTime(100),
         distinctUntilChanged(),
         switchMap((query: any) => this.mockSearchAPI(query))
       )
@@ -32,24 +32,29 @@ export class DebounceSearchComponent {
       });
   }
 
-  onSearchInput(event: Event): void {
-    const query = (event.target as HTMLInputElement).value;
-    this.searchSubject.next(query);
+  // onSearchInput(event: Event): void {
+  //   const query = (event.target as HTMLInputElement).value;
+  //   this.searchSubject.next(query);
+  // }
+
+  onSearchInputt(e: any) {
+    const query = e.target.value;
+    // this.searchSubject.next(query);
   }
 
   private mockSearchAPI(query: string) {
     return this.http.get(`https://dummyjson.com/users/search?q=${query}`);
   }
 
-  // private inItSearch() {
-  //   this.searchSubject
-  //     .pipe(
-  //       debounceTime(100),
-  //       distinctUntilChanged(),
-  //       switchMap((query: any) => this.mockSearchAPI(query))
-  //     )
-  //     .subscribe((results: any) => {
-  //       this.searchResults = results?.users;
-  //     });
-  // }
+  private inItSearch() {
+    this.searchSubject
+      .pipe(
+        debounceTime(100),
+        distinctUntilChanged(),
+        switchMap((query: any) => this.mockSearchAPI(query))
+      )
+      .subscribe((results: any) => {
+        this.searchResults = results?.users;
+      });
+  }
 }

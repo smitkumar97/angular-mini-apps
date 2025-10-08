@@ -1,1 +1,35 @@
 <input [(ngModel)]="name" (input)="updateName()" />
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div formGroupName="user">
+    <input formControlName="name" placeholder="Name" />
+    <div
+      *ngIf="form.get('user.name')?.touched && form.get('user.name')?.invalid"
+    >
+      Name is required.
+    </div>
+
+    <input formControlName="email" placeholder="Email" />
+    <div
+      *ngIf="
+        form.get('user.email')?.touched &&
+        form.get('user.email')?.hasError('email')
+      "
+    >
+      Invalid email format.
+    </div>
+  </div>
+
+  <div formGroupName="address">
+    <input formControlName="city" placeholder="City" />
+    <div
+      *ngIf="
+        form.get('address.city')?.touched && form.get('address.city')?.invalid
+      "
+    >
+      City is required.
+    </div>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>

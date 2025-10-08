@@ -1,5 +1,5 @@
 <div [formGroup]="searchForm" class="m-2">
-  <input formControlName="firstName" />
+  <input formControlName="firstName" (input)="onSearchInputt($event)" />
 </div>
 @if (searchResults?.length) {
 <ul>
