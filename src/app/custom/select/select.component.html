@@ -1,0 +1,15 @@
+<label *ngIf="label" class="block mb-1">{{ label }}</label>
+<select
+  class="border rounded px-2 py-1 w-full"
+  [value]="value"
+  (change)="onSelect($event)"
+  (blur)="onTouched()"
+  [disabled]="disabled"
+>
+  <option value="" disabled>Select an option</option>
+  <option *ngFor="let option of options" [value]="option.value">
+    {{ option.label }}
+  </option>
+</select>
+
+<p>Selected Country: {{ value }}</p>
