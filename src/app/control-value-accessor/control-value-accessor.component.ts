@@ -1,5 +1,4 @@
-import { Component, signal } from '@angular/core';
-import { CalculatorComponent } from '../calculator/calculator.component';
+import { Component } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -7,20 +6,22 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { SelectComponent } from '../custom/select/select.component';
+import { DatePickerComponent } from '../custom/date-picker/date-picker.component';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-control-value-accessor',
   imports: [
-    CalculatorComponent,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    SelectComponent,
+    DatePickerComponent,
   ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  templateUrl: './control-value-accessor.component.html',
+  styleUrl: './control-value-accessor.component.scss',
 })
-export class HomeComponent {
-  count = signal(0);
+export class ControlValueAccessorComponent {
   form: FormGroup;
   options = [
     { label: 'USA', value: 'us' },
@@ -34,18 +35,6 @@ export class HomeComponent {
       name: '',
       dob: [new Date()],
     });
-  }
-
-  ngOnInit(): void {
-    this.count.set(1);
-  }
-
-  increment() {
-    this.count.update((c) => c + 1);
-  }
-
-  decrement() {
-    this.count.update((c) => c - 1);
   }
 
   onSubmit() {

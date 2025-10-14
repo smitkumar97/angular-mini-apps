@@ -1,5 +1,6 @@
 @import "primeicons/primeicons.css";
 @import "primeflex/primeflex.css";
+@import "flatpickr/dist/flatpickr.min.css";
 @plugin "tailwindcss-primeui";
 @custom-variant dark (&:where(.my-app-dark, .my-app-dark *));
 

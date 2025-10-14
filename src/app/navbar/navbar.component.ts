@@ -28,55 +28,59 @@ export class NavbarComponent {
   ngOnInit() {
     this.items = [
       {
-        label: "Home",
-        icon: "pi pi-home",
-        route: "/",
+        label: 'Home',
+        icon: 'pi pi-home',
+        route: '/',
       },
       {
-        label: "Login",
-        icon: "pi pi-sign-in",
-        route: "/login",
+        label: 'Login',
+        icon: 'pi pi-sign-in',
+        route: '/login',
       },
       {
-        label: "Projects",
-        icon: "pi pi-home",
-        badge: "3",
+        label: 'Projects',
+        icon: 'pi pi-home',
+        badge: '3',
         items: [
           {
-            label: "Todo App",
-            url: "/todo",
+            label: 'Todo App',
+            url: '/todo',
           },
           {
-            label: "Users",
-            url: "/users",
+            label: 'Users',
+            url: '/users',
           },
           {
-            label: "Jira",
-            url: "/interview",
+            label: 'Jira',
+            url: '/interview',
           },
           {
-            label: "Debounce Search",
-            url: "/debounce",
+            label: 'Debounce Search',
+            url: '/debounce',
           },
           {
-            label: "Interview",
-            url: "/interview",
+            label: 'ControlValueAccessor',
+            url: '/control-value-accessor',
           },
           {
-            label: "Component D",
-            url: "/compd",
+            label: 'Interview',
+            url: '/interview',
           },
           {
-            label: "Component A",
-            url: "/compa",
+            label: 'Component D',
+            url: '/compd',
           },
           {
-            label: "Component X",
-            url: "/compx",
+            label: 'Component A',
+            url: '/compa',
           },
           {
-            label: "Component Y",
-            url: "/compy",
+            label: 'Component X',
+            url: '/compx',
+          },
+          {
+            label: 'Component Y',
+            url: '/compy',
           },
         ],
       },

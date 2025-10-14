@@ -15,86 +15,91 @@ import { DComponent } from "./interview/a/b/c/d/d.component";
 import { AComponent } from "./interview/a/a.component";
 import { XComponent } from "./interview/x/x.component";
 import { YComponent } from "./interview/y/y.component";
+import { ControlValueAccessorComponent } from './control-value-accessor/control-value-accessor.component';
 
 export const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: HomeComponent,
-    title: "Home Page",
+    title: 'Home Page',
   },
   {
-    path: "jira",
+    path: 'jira',
     component: JiraComponent,
-    title: "Jira Page",
+    title: 'Jira Page',
   },
   {
-    path: "todo",
+    path: 'todo',
     component: TodoComponent,
-    title: "Todo App",
+    title: 'Todo App',
   },
   {
-    path: "ecommerce",
+    path: 'ecommerce',
     component: EcommerceComponent,
-    title: "Todo App",
+    title: 'Todo App',
   },
   {
-    path: "calculator",
+    path: 'calculator',
     component: CalculatorComponent,
-    title: "Calculator App",
+    title: 'Calculator App',
   },
   {
-    path: "users",
+    path: 'users',
     loadChildren: () =>
-      import("./shared/user.module").then((m) => m.UserModule),
+      import('./shared/user.module').then((m) => m.UserModule),
     // component: UserProfileComponent,
   },
   {
-    path: "user/:id",
+    path: 'user/:id',
     component: UserDetailsComponent,
   },
   {
-    path: "user/:id/post",
+    path: 'user/:id/post',
     component: FormDemoComponent,
   },
   {
-    path: "debounce",
+    path: 'debounce',
     component: DebounceSearchComponent,
   },
   {
-    path: "login",
+    path: 'control-value-accessor',
+    component: ControlValueAccessorComponent,
+  },
+  {
+    path: 'login',
     component: LoginComponent,
   },
   {
-    path: "interview",
+    path: 'interview',
     component: InterviewComponent,
   },
   {
-    path: "test",
+    path: 'test',
     component: TestComponent,
-    title: "Test App",
+    title: 'Test App',
   },
   {
-    path: "compd",
+    path: 'compd',
     component: DComponent,
-    title: "D Component",
+    title: 'D Component',
   },
   {
-    path: "compa",
+    path: 'compa',
     component: AComponent,
-    title: "A Component",
+    title: 'A Component',
   },
   {
-    path: "compx",
+    path: 'compx',
     component: XComponent,
-    title: "X Component",
+    title: 'X Component',
   },
   {
-    path: "compy",
+    path: 'compy',
     component: YComponent,
-    title: "Y Component",
+    title: 'Y Component',
   },
   {
-    path: "**",
+    path: '**',
     component: NotFoundComponent,
   },
 ];
