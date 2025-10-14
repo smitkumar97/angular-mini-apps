@@ -13,15 +13,27 @@
   </button>
 </form>
 
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <app-date-picker
-    formControlName="dob"
-    label="Select your birth date"
-  ></app-date-picker>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+  <div class="mb-3">
+    <app-date-picker
+      formControlName="dob"
+      label="Select your birth date"
+    ></app-date-picker>
 
-  <button type="submit" class="mt-3 px-4 py-2 bg-blue-600 text-white rounded">
+    <div
+      *ngIf="form.get('dob')?.invalid && form.get('dob')?.touched"
+      class="text-red-600 text-sm mt-1"
+    >
+      Date of birth is required.
+    </div>
+  </div>
+
+  <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded">
     Submit
   </button>
 </form>
 
-<p class="mt-3">Selected date: {{ form.get("dob")?.value | date }}</p>
+<p class="mt-3">
+  Selected date: {{ form.get('dob')?.value | date }}
+</p>
+

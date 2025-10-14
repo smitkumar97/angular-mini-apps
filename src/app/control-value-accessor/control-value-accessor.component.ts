@@ -4,6 +4,7 @@ import {
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SelectComponent } from '../custom/select/select.component';
@@ -33,11 +34,15 @@ export class ControlValueAccessorComponent {
     this.form = this.fb.group({
       country: [''],
       name: '',
-      dob: [new Date()],
+      dob: [null, Validators.required],
     });
   }
 
   onSubmit() {
-    console.log(this.form.value);
+    if (this.form.valid) {
+          console.log('Form submitted:', this.form.value);
+        } else {
+          this.form.markAllAsTouched();
+        }
   }
 }
