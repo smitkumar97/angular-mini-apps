@@ -1,0 +1,18 @@
+<h1>{{ fullName | kebabcase}}</h1> 
+
+<br>
+
+<h2>
+    {{ name()}}
+</h2>
+
+  <p-button
+    class="ml-1"
+    pRipple
+    severity="success"
+    label="Upper case"
+    icon="pi pi-plus"
+    size="small"
+    [raised]="true"
+    (onClick)="uppercase()"
+  />

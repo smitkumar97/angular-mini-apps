@@ -17,4 +17,8 @@ export class UserDetailsComponent {
     const navigation = this.router.getCurrentNavigation();
     this.userData = navigation?.extras.state?.["user"];
   }
+
+  goBack() {
+    this.router.navigate(['/users']);
+  }
 }

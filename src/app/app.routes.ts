@@ -16,6 +16,7 @@ import { AComponent } from "./interview/a/a.component";
 import { XComponent } from "./interview/x/x.component";
 import { YComponent } from "./interview/y/y.component";
 import { ControlValueAccessorComponent } from './control-value-accessor/control-value-accessor.component';
+import { SignalComponent } from "./signal/signal.component";
 
 export const routes: Routes = [
   {
@@ -97,6 +98,11 @@ export const routes: Routes = [
     path: 'compy',
     component: YComponent,
     title: 'Y Component',
+  },
+  {
+    path: 'signals',
+    component: SignalComponent,
+    title: 'Signals',
   },
   {
     path: '**',

@@ -1,4 +1,14 @@
-<div class="mb-4 p-5 flex items-start justify-start">
+<div class="mb-4 p-5 flex flex-column items-start justify-start">
+    <p-button
+    class="mb-4"
+    pRipple
+    severity="success"
+    label="Back"
+    icon="pi pi-arrow-left"
+    size="small"
+    [raised]="true"
+    (onClick)="goBack()"
+  />
   <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
     <ng-template #header>
       <img

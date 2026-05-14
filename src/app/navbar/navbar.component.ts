@@ -59,6 +59,10 @@ export class NavbarComponent {
             url: '/debounce',
           },
           {
+            label: 'Signals',
+            url: '/signals',
+          },
+          {
             label: 'ControlValueAccessor',
             url: '/control-value-accessor',
           },
