@@ -1,4 +1,4 @@
-import { CommonModule } from "@angular/common";
+
 import { Component } from "@angular/core";
 import {
   FormBuilder,
@@ -43,7 +43,7 @@ const newProduct: Product = {
 
 @Component({
   selector: "app-interview",
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: "./interview.component.html",
   styleUrl: "./interview.component.scss",
 })

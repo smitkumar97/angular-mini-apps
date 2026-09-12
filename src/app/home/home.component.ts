@@ -6,16 +6,15 @@ import {
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-home',
   imports: [
     CalculatorComponent,
-    CommonModule,
     FormsModule,
-    ReactiveFormsModule,
-  ],
+    ReactiveFormsModule
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

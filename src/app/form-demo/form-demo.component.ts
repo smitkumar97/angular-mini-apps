@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { CommonModule } from "@angular/common";
+
 import {
   FormBuilder,
   FormGroup,
@@ -10,7 +10,7 @@ import { RouterLink } from "@angular/router";
 
 @Component({
   selector: "app-form-demo",
-  imports: [CommonModule, ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: "./form-demo.component.html",
   styleUrl: "./form-demo.component.scss",
 })

@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { TableModule } from "primeng/table";
 import { FormsModule } from "@angular/forms";
-import { CommonModule } from "@angular/common";
+
 import { ButtonModule } from "primeng/button";
 import { ToastModule } from "primeng/toast";
 import { MessageService } from "primeng/api";
@@ -9,7 +9,7 @@ import TodoItem from "../models/todo.model";
 
 @Component({
   selector: "app-todo",
-  imports: [TableModule, ButtonModule, ToastModule, FormsModule, CommonModule],
+  imports: [TableModule, ButtonModule, ToastModule, FormsModule],
   providers: [MessageService],
   templateUrl: "./todo.component.html",
   styleUrl: "./todo.component.scss",
