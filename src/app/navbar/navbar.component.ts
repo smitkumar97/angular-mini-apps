@@ -1,4 +1,4 @@
-import { CommonModule } from "@angular/common";
+
 import { Component } from "@angular/core";
 import { Router, RouterModule } from "@angular/router";
 import { MenuItem } from "primeng/api";
@@ -14,11 +14,10 @@ import { StyleClassModule } from "primeng/styleclass";
     Menubar,
     AvatarModule,
     InputTextModule,
-    CommonModule,
     RouterModule,
     BadgeModule,
-    StyleClassModule,
-  ],
+    StyleClassModule
+],
   templateUrl: "./navbar.component.html",
   styleUrl: "./navbar.component.scss",
 })

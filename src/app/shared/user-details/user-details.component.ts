@@ -3,18 +3,18 @@ import { CardModule } from "primeng/card";
 import { ButtonModule } from "primeng/button";
 import { Router } from "@angular/router";
 import { Chip } from "primeng/chip";
-import { CommonModule } from "@angular/common";
+
 
 @Component({
   selector: "app-user-details",
-  imports: [CardModule, ButtonModule, Chip, CommonModule],
+  imports: [CardModule, ButtonModule, Chip],
   templateUrl: "./user-details.component.html",
   styleUrl: "./user-details.component.scss",
 })
 export class UserDetailsComponent {
   userData: any;
   constructor(private router: Router) {
-    const navigation = this.router.getCurrentNavigation();
+    const navigation = this.router.currentNavigation();
     this.userData = navigation?.extras.state?.["user"];
   }
 

@@ -1,6 +1,9 @@
 <ng-content></ng-content>
-<div *ngIf="true; else loginTemplate">Welcome, User!</div>
-<ng-template #loginTemplate> Please log in. </ng-template>
+@if (true) {
+  <div>Welcome, User!</div>
+} @else {
+  Please log in.
+}
 
 <ng-container>
   <p>This is a container fragment</p>

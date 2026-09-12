@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-test',
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule],
   templateUrl: './test.component.html',
   styleUrl: './test.component.scss',
 })

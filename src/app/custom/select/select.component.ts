@@ -1,4 +1,4 @@
-import { CommonModule, JsonPipe } from '@angular/common';
+import { JsonPipe } from '@angular/common';
 import { Component, forwardRef, Input } from '@angular/core';
 import {
   ControlValueAccessor,
@@ -9,7 +9,7 @@ import {
 
 @Component({
   selector: 'app-select',
-  imports: [FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './select.component.html',
   styleUrl: './select.component.scss',
   providers: [

@@ -1,28 +1,34 @@
-<ul *ngFor="let firstObj of rawData">
-  <li>
-    <input
-      type="checkbox"
-      (click)="selectInnerCheckboxes(firstObj)"
-      [checked]="firstObj.checked"
-    />
-    {{ firstObj.name }}
-    <ol *ngFor="let secondObj of firstObj.value">
-      <li>
-        <input
-          type="checkbox"
-          [checked]="secondObj.checked"
-          (click)="selectInnerCheckboxes(secondObj)"
-        />{{ secondObj.name }}
-        <ol *ngFor="let thirdObj of secondObj.value">
+@for (firstObj of rawData; track firstObj) {
+  <ul>
+    <li>
+      <input
+        type="checkbox"
+        (click)="selectInnerCheckboxes(firstObj)"
+        [checked]="firstObj.checked"
+        />
+      {{ firstObj.name }}
+      @for (secondObj of firstObj.value; track secondObj) {
+        <ol>
           <li>
             <input
               type="checkbox"
-              [checked]="thirdObj.checked"
-              (click)="selectInnerCheckboxes(thirdObj)"
-            />{{ thirdObj.name }}
-          </li>
-        </ol>
-      </li>
-    </ol>
-  </li>
-</ul>
+              [checked]="secondObj.checked"
+              (click)="selectInnerCheckboxes(secondObj)"
+              />{{ secondObj.name }}
+              @for (thirdObj of secondObj.value; track thirdObj) {
+                <ol>
+                  <li>
+                    <input
+                      type="checkbox"
+                      [checked]="thirdObj.checked"
+                      (click)="selectInnerCheckboxes(thirdObj)"
+                      />{{ thirdObj.name }}
+                    </li>
+                  </ol>
+                }
+              </li>
+            </ol>
+          }
+        </li>
+      </ul>
+    }
