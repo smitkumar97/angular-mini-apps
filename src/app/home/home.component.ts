@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { CalculatorComponent } from '../calculator/calculator.component';
 import {
   FormBuilder,
@@ -7,14 +7,9 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 
-
 @Component({
   selector: 'app-home',
-  imports: [
-    CalculatorComponent,
-    FormsModule,
-    ReactiveFormsModule
-],
+  imports: [CalculatorComponent, FormsModule, ReactiveFormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -26,6 +21,9 @@ export class HomeComponent {
     { label: 'Canada', value: 'ca' },
     { label: 'India', value: 'in' },
   ];
+
+  firstName = signal('');
+  lastName = signal('');
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
@@ -46,6 +44,16 @@ export class HomeComponent {
   decrement() {
     this.count.update((c) => c - 1);
   }
+
+  doubleCount = computed(() => this.count() * 2);
+
+  fullName = computed(() => {
+    return `${this.firstName()} ${this.lastName()}`.trim();
+  });
+
+  isFormValid = computed(() => {
+    return this.firstName().length > 0 && this.lastName().length > 0;
+  });
 
   onSubmit() {
     console.log(this.form.value);

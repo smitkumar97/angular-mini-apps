@@ -3,5 +3,24 @@
 <button (click)="increment()">Increment</button> &nbsp;
 <button (click)="decrement()">Decrement</button>
 <p>Count: {{ count() }}</p>
+<p>Double Count: {{ doubleCount() }}</p>
+
+<!-- Form for first name and last name -->
+<label for="firstName">First Name:</label> &nbsp;
+<input id="firstName" [(ngModel)]="firstName" />
+<br />
+<br />
+<label for="lastName">Last Name:</label> &nbsp;
+<input id="lastName" [(ngModel)]="lastName" />
+<br />
+
+<br />
+
+<!-- Display full name in input box as regular input in readonly mode -->
+<label for="fullName">Full Name:</label> &nbsp;
+<input id="fullName" [value]="fullName()" readonly />
+<br />
+<br />
+<button [disabled]="!isFormValid()">Submit</button>
 
 <app-calculator><h1>Hello Smit !</h1></app-calculator>
